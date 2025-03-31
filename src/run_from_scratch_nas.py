@@ -120,6 +120,8 @@ def main():
         model_family = "bert"
     elif model_type.startswith("roberta"):
         model_family = "roberta"
+    elif model_type.startswith("deepseek"):
+        model_family = "deepseek"
     else:
         logging.error(
             f"Model type {model_type} are not supported. "

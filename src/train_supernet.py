@@ -60,6 +60,17 @@ from roberta import (
     SuperNetRobertaForSequenceClassificationLARGE,
 )
 
+from deepseek import (
+    SuperNetDeepseekForMultipleChoiceLARGE, 
+    SuperNetDeepseekForMultipleChoiceLAYER, 
+    SuperNetDeepseekForMultipleChoiceMEDIUM, 
+    SuperNetDeepseekForMultipleChoiceSMALL, 
+    SuperNetDeepseekForSequenceClassificationLARGE, 
+    SuperNetDeepseekForSequenceClassificationLAYER, 
+    SuperNetDeepseekForSequenceClassificationMEDIUM, 
+    SuperNetDeepseekForSequenceClassificationSMALL, 
+)
+
 
 def kd_loss(
     student_output, targets, teacher_output, temperature=1, is_regression=False
@@ -110,6 +121,20 @@ model_types["roberta"] = {
         "medium": SuperNetRobertaForMultipleChoiceMEDIUM,
         "layer": SuperNetRobertaForMultipleChoiceLAYER,
         "large": SuperNetRobertaForMultipleChoiceLARGE,
+    },
+}
+model_types["deepseek"] = {
+    "seq_classification": {
+        "small": SuperNetDeepseekForSequenceClassificationSMALL,
+        "medium": SuperNetDeepseekForSequenceClassificationMEDIUM,
+        "layer": SuperNetDeepseekForSequenceClassificationLAYER,
+        "large": SuperNetDeepseekForSequenceClassificationLARGE,
+    },
+    "multiple_choice": {
+        "small": SuperNetDeepseekForMultipleChoiceSMALL,
+        "medium": SuperNetDeepseekForMultipleChoiceMEDIUM,
+        "layer": SuperNetDeepseekForMultipleChoiceLAYER,
+        "large": SuperNetDeepseekForMultipleChoiceLARGE,
     },
 }
 
